@@ -1,0 +1,237 @@
+<html>
+    <head>
+        <title>house-price predication model</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .image-1
+            {
+                width: 100%;
+                height: 400px;
+            }
+            .heading{
+                min-height: 60px;
+                background-color: #333;
+                border-radius: 10px;
+            }
+            .heading h1{
+                font-size: 30px;
+                font-weight: bold;
+                padding: 20px;
+                font-family: sans-serif;
+                color: white;
+                text-align: center;
+
+            }
+            .from-sec
+            {
+                background-color: #777;
+                height: 450px;
+            }
+            .pred
+            {
+                padding-top: 80px;
+            }
+            input[type="text"]
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+
+            }
+            .btn
+            {
+                margin-top: 50px;
+            }
+            input[type="submit"]
+            {
+                color: white;
+                background-color: #333;
+                font-size: 20px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                border: none;
+                height: 50px;
+                width: 150px;
+                border-radius: 50px;
+                padding: 10px;
+                margin-bottom: 40px;
+            }
+            input[type="submit"]:hover
+            {
+                background-color: rgb(255, 93, 93);
+                font-weight: bold;
+            }
+            .from-sec h1{
+                color: white;
+                font-size: 30px;
+            }
+            .Item_Type
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+            .Item_Fat_Content
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+            .Outlet_Identifier
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+            .Outlet_Establishment_Year
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+            .Outlet_Size
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+            .Outlet_Location_Type
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+            .Outlet_Type
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+            .footer h3{
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 20px;
+                font-size: 25px;
+                font-weight: bold;
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="images">
+                <img src="static\images\image.jpg" class="image-1">
+            </div>
+        </div>
+        <div class="container">
+            <div class="heading">
+                <h1>Item Outlet Saleprice Prediction Model</h1>
+            </div>
+        </div>
+        <div class="from-sec">
+            <center>
+                <form name="Item_Outlet_Sales" action="/predict" method="POST" class="pred">
+                <input type="text" placeholder="Item_Identifier" name="Item_Identifier">
+                <input type="text" placeholder="Item_Weight" name="Item_Weight">
+                <input type="text" placeholder="Item_MRP" name="Item_MRP"><br>
+                
+                <select class="Item_Type" name="Item_Type">
+                    <option>Dairy</option>
+                    <option>Soft Drinks</option>
+                    <option>Meat</option>
+                    <option>Fruits and Vegetables</option>
+                    <option>Household</option>
+                    <option>Baking Goods</option>
+                    <option>Snack Foods</option>
+                    <option>Frozen Foods</option>
+                    <option>Breakfast</option>
+                    <option>Health and Hygiene</option>
+                    <option>Hard Drinks</option>
+                    <option>Canned</option>
+                    <option>Breads</option>
+                    <option>Starchy Foods</option>
+                    <option>Seafood</option>
+                    <option>Others</option>
+                </select>
+                <select class="Item_Fat_Content" name="Item_Fat_Content">
+                    <option>Low Fat</option>
+                    <option>Regular</option>
+                </select>
+                <select class="Outlet_Identifier" name="Outlet_Identifier">
+                    <option>OUT049</option>
+                    <option>OUT018</option>
+                    <option>OUT010</option>
+                    <option>OUT013</option>
+                    <option>OUT027</option>
+                    <option>OUT045</option>
+                    <option>OUT017</option>
+                    <option>OUT046</option>
+                    <option>OUT035</option>
+                    <option>OUT019</option>
+                </select>
+                <select class="Outlet_Establishment_Year" name="Outlet_Establishment_Year">
+                    <option>1985</option>
+                    <option>1987</option>
+                    <option>1997</option>
+                    <option>1998</option>
+                    <option>1999</option>
+                    <option>2002</option>
+                    <option>2004</option>
+                    <option>2007</option>
+                    <option>2009</option>
+                </select>
+                <select class="Outlet_Size" name="Outlet_Size">
+                    <option>Medium</option>
+                    <option>High</option>
+                    <option>Small</option>
+                </select>
+                <select class="Outlet_Location_Type" name="Outlet_Location_Type">
+                    <option>Tier 1</option>
+                    <option>Tier 2</option>
+                    <option>Tier 3</option>
+                </select>
+                <select class="Outlet_Type" name="Outlet_Type">
+                    <option>Supermarket Type1</option>
+                    <option>Supermarket Type2</option>
+                    <option>Supermarket Type3</option>
+                    <option>Grocery Store</option>
+                </select>
+                <div class="btn">
+                    <input type="submit" class="submit" value="Predict">
+                </div>
+                <div>
+                    <h1> {{ prediction_text }}</h1>
+                </div>
+            </form></center>
+        </div>
+        <div class="footer">
+            <h3>
+                Delivery Contact:
+                urjadave8@gmail.com<br>
+                Devloped By:
+                Urja Dave
+            </h3>
+        </div>
+    </body>
+</html>
